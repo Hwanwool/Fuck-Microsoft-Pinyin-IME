@@ -37,6 +37,8 @@ namespace ImeKeyGuard
         const int WH_MOUSE_LL = 14;
         const int WM_KEYDOWN = 0x0100;
         const int WM_SYSKEYDOWN = 0x0104;
+        const int WM_KEYUP = 0x0101;
+        const int WM_SYSKEYUP = 0x0105;
         const int WM_LBUTTONDOWN = 0x0201;
         const int WM_RBUTTONDOWN = 0x0204;
 
@@ -141,6 +143,75 @@ namespace ImeKeyGuard
             return (GetKeyboardLayout(tid).ToInt64() & 0xFFFF).ToString("X4");
         }
 
+        static volatile int modeState = -1;
+        static AutomationElement modeButton = null;
+
+        static bool? ParseMode(string n)
+        {
+            if (n == null) return null;
+            if (n.Contains("\u4E2D\u6587\u6A21\u5F0F")) return true;
+            if (n.Contains("\u82F1\u8BED\u6A21\u5F0F")) return false;
+            if (n.Contains("\u82F1\u6587\u6A21\u5F0F")) return false;
+            if (n.IndexOf("chinese mode", StringComparison.OrdinalIgnoreCase) >= 0) return true;
+            if (n.IndexOf("english mode", StringComparison.OrdinalIgnoreCase) >= 0) return false;
+            return null;
+        }
+
+        static bool? ReadChineseMode()
+        {
+            try
+            {
+                if (modeButton != null)
+                {
+                    try
+                    {
+                        bool? cached = ParseMode(modeButton.Current.Name);
+                        if (cached.HasValue) return cached;
+                    }
+                    catch { modeButton = null; }
+                }
+                AutomationElement root = AutomationElement.RootElement;
+                AutomationElementCollection wins = root.FindAll(TreeScope.Children, Condition.TrueCondition);
+                foreach (AutomationElement w in wins)
+                {
+                    try
+                    {
+                        if (w.Current.ClassName != "Shell_TrayWnd") continue;
+                        AutomationElementCollection all = w.FindAll(TreeScope.Descendants, Condition.TrueCondition);
+                        foreach (AutomationElement e in all)
+                        {
+                            try
+                            {
+                                string n = e.Current.Name;
+                                if (n == null) continue;
+                                if (n.Contains("\u8F93\u5165\u6307\u793A") || n.IndexOf("input indicator", StringComparison.OrdinalIgnoreCase) >= 0)
+                                {
+                                    bool? r = ParseMode(n);
+                                    if (r.HasValue)
+                                    {
+                                        modeButton = e;
+                                        return r;
+                                    }
+                                }
+                            }
+                            catch { }
+                        }
+                    }
+                    catch { }
+                }
+            }
+            catch { }
+            return null;
+        }
+
+        static void RefreshMode(object state)
+        {
+            Thread.Sleep(100);
+            bool? r = ReadChineseMode();
+            Log("  refresh mode=" + (r.HasValue ? (r.Value ? "CN" : "EN") : "null"));
+            if (r.HasValue) modeState = r.Value ? 1 : 0;
+        }
+
         public TrayApp()
         {
             hookProc = new LowLevelKeyboardProc(HookCallback);
@@ -195,6 +266,7 @@ namespace ImeKeyGuard
             tray.Visible = true;
             UpdateTrayText();
             Log("start hook=" + hook + " mouse=" + mouseHook + " winevent=" + winEventHook);
+            ThreadPool.QueueUserWorkItem(new WaitCallback(RefreshMode));
         }
 
         void UpdateTrayText()
@@ -231,6 +303,12 @@ namespace ImeKeyGuard
             if (nCode >= 0 && enabled)
             {
                 int msg = wParam.ToInt32();
+                if (msg == WM_KEYUP || msg == WM_SYSKEYUP)
+                {
+                    KBDLLHOOKSTRUCT ku = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
+                    if (ku.vkCode == VK_SHIFT) { Log("  shift keyup"); ThreadPool.QueueUserWorkItem(new WaitCallback(RefreshMode)); }
+                    return CallNextHookEx(hook, nCode, wParam, lParam);
+                }
                 if (msg == WM_KEYDOWN || msg == WM_SYSKEYDOWN)
                 {
                     KBDLLHOOKSTRUCT k = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
@@ -246,12 +324,32 @@ namespace ImeKeyGuard
 
                     if (vk == VK_TAB || vk == VK_OEM_1)
                     {
-                        Log(string.Format("key vk=0x{0:X2} cn={1} comp={2} sh={3} ct={4} al={5} en={6} fg={7}",
-                            vk, IsChineseActive(), composing, shift, ctrl, alt, enabled, FgHkl()));
+                        Log(string.Format("key vk=0x{0:X2} cn={1} mode={2} comp={3} sh={4} ct={5} al={6} en={7} fg={8}",
+                            vk, IsChineseActive(), modeState, composing, shift, ctrl, alt, enabled, FgHkl()));
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(RefreshMode));
+                    }
+                    if (vk == VK_SHIFT)
+                    {
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(RefreshMode));
                     }
 
                     if (IsChineseActive())
                     {
+                        if (vk == VK_TAB || vk == VK_OEM_1)
+                        {
+                            bool? m = ReadChineseMode();
+                            if (m.HasValue) modeState = m.Value ? 1 : 0;
+                            if (m == false)
+                            {
+                                composing = false;
+                                return CallNextHookEx(hook, nCode, wParam, lParam);
+                            }
+                        }
+                        if (modeState == 0)
+                        {
+                            composing = false;
+                            return CallNextHookEx(hook, nCode, wParam, lParam);
+                        }
                         if (!shift && !ctrl && !alt)
                         {
                             if (vk == VK_TAB && composing)
@@ -419,4 +517,6 @@ namespace ImeKeyGuard
         }
     }
 }
+
+
 

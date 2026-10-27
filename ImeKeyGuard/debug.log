@@ -1,70 +1,20 @@
-19:44:06.246 start hook=285742069 mouse=384438717 winevent=1819809255
-19:44:27.912 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:44:27.913   -> swallow TAB
-19:44:27.983     uia skip terminal cls=TermControl
-19:44:27.983   verifyTab state=Unknown
-19:44:31.798 key vk=0xBA cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:44:31.798   -> swallow SEMI
-19:44:31.800     uia skip terminal cls=TermControl
-19:44:31.800   semi state=Unknown
-19:44:51.362 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:44:51.363   -> swallow TAB
-19:44:51.371     uia ct=ControlType.Document cls=RichEditD2DPT len=0 tail=[]
-19:44:51.371   verifyTab state=NotComposing
-19:44:54.855 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:44:54.856   -> swallow TAB
-19:44:54.858     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
-19:44:54.859   verifyTab state=Composing
-19:44:58.930 key vk=0xBA cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:44:58.931   -> swallow SEMI
-19:44:58.933     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
-19:44:58.933   semi state=Composing
-19:45:01.286 key vk=0xBA cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:45:01.286   -> swallow SEMI
-19:45:01.288     uia ct=ControlType.Document cls=RichEditD2DPT len=0 tail=[]
-19:45:01.289   semi state=NotComposing
-19:47:27.015 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:27.015   -> swallow TAB
-19:47:27.017     uia skip terminal cls=TermControl
-19:47:27.018   verifyTab state=Unknown
-19:47:27.815 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:27.815   -> swallow TAB
-19:47:27.817     uia skip terminal cls=TermControl
-19:47:27.817   verifyTab state=Unknown
-19:47:28.023 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.023   -> swallow TAB
-19:47:28.024     uia skip terminal cls=TermControl
-19:47:28.024   verifyTab state=Unknown
-19:47:28.223 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.223   -> swallow TAB
-19:47:28.225     uia skip terminal cls=TermControl
-19:47:28.225   verifyTab state=Unknown
-19:47:28.383 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.384   -> swallow TAB
-19:47:28.385     uia skip terminal cls=TermControl
-19:47:28.386   verifyTab state=Unknown
-19:47:28.543 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.543   -> swallow TAB
-19:47:28.544     uia skip terminal cls=TermControl
-19:47:28.546   verifyTab state=Unknown
-19:47:28.703 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.703   -> swallow TAB
-19:47:28.705     uia skip terminal cls=TermControl
-19:47:28.705   verifyTab state=Unknown
-19:47:28.863 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:28.863   -> swallow TAB
-19:47:28.866     uia skip terminal cls=TermControl
-19:47:28.866   verifyTab state=Unknown
-19:47:29.063 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:29.063   -> swallow TAB
-19:47:29.067     uia skip terminal cls=TermControl
-19:47:29.067   verifyTab state=Unknown
-19:47:29.271 key vk=0x09 cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:29.272   -> swallow TAB
-19:47:29.274     uia skip terminal cls=TermControl
-19:47:29.274   verifyTab state=Unknown
-19:47:29.543 key vk=0xBA cn=True comp=True sh=False ct=False al=False en=True fg=0804
-19:47:29.543   -> swallow SEMI
-19:47:29.546     uia skip terminal cls=TermControl
-19:47:29.546   semi state=Unknown
-19:47:35.367 key vk=0x09 cn=True comp=False sh=False ct=False al=False en=True fg=0804
+21:30:18.827 start hook=548934991 mouse=401150397 winevent=1458899109
+21:30:19.316   refresh mode=CN
+21:30:27.371 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+21:30:27.585   -> swallow TAB
+21:30:27.600     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
+21:30:27.601   verifyTab state=Composing
+21:30:27.814   refresh mode=CN
+21:30:31.673 key vk=0xBA cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+21:30:31.673   -> swallow SEMI
+21:30:31.675     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
+21:30:31.675   semi state=Composing
+21:30:31.784   refresh mode=CN
+21:30:36.965 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+21:30:37.072   refresh mode=EN
+21:30:39.864 key vk=0xBA cn=True mode=0 comp=False sh=False ct=False al=False en=True fg=0804
+21:30:39.972   refresh mode=EN
+21:31:05.758 key vk=0x09 cn=True mode=0 comp=False sh=False ct=False al=False en=True fg=0804
+21:31:05.866   refresh mode=CN
+21:31:09.697 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+21:31:09.804   refresh mode=EN
