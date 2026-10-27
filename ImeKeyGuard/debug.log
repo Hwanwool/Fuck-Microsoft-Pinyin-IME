@@ -1,20 +1,257 @@
-21:30:18.827 start hook=548934991 mouse=401150397 winevent=1458899109
-21:30:19.316   refresh mode=CN
-21:30:27.371 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
-21:30:27.585   -> swallow TAB
-21:30:27.600     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
-21:30:27.601   verifyTab state=Composing
-21:30:27.814   refresh mode=CN
-21:30:31.673 key vk=0xBA cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
-21:30:31.673   -> swallow SEMI
-21:30:31.675     uia ct=ControlType.Document cls=RichEditD2DPT len=6 tail=[ni'hao]
-21:30:31.675   semi state=Composing
-21:30:31.784   refresh mode=CN
-21:30:36.965 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
-21:30:37.072   refresh mode=EN
-21:30:39.864 key vk=0xBA cn=True mode=0 comp=False sh=False ct=False al=False en=True fg=0804
-21:30:39.972   refresh mode=EN
-21:31:05.758 key vk=0x09 cn=True mode=0 comp=False sh=False ct=False al=False en=True fg=0804
-21:31:05.866   refresh mode=CN
-21:31:09.697 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
-21:31:09.804   refresh mode=EN
+22:46:13.526 start hook=827722899 mouse=256054577 winevent=147065979
+22:46:14.027   refresh mode=CN
+22:47:44.073 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:47:44.711   refresh mode=CN
+22:48:21.593     comp ON letter
+22:48:22.721     comp OFF vk0D
+22:48:23.777     comp ON letter
+22:48:24.433     comp OFF vk0D
+22:48:27.418 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=False en=True fg=0804
+22:48:27.801   refresh mode=CN
+22:48:32.281 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:48:32.806   refresh mode=CN
+22:48:33.177 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:48:33.553 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:48:33.689   refresh mode=CN
+22:48:34.041   refresh mode=CN
+22:48:34.601 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:48:34.986   refresh mode=CN
+22:48:45.009     comp ON letter
+22:48:45.617     comp OFF vk20
+22:48:49.497 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:48:49.930   refresh mode=CN
+22:48:49.993 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:48:50.480   refresh mode=null
+22:48:50.497 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:48:51.020   refresh mode=CN
+22:48:51.393     comp ON letter
+22:48:53.401 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=True en=True fg=0804
+22:48:53.401     comp OFF en-mode
+22:48:53.850   refresh mode=null
+22:48:54.113 key vk=0x09 cn=False mode=0 comp=False sh=False ct=False al=True en=True fg=0409
+22:48:54.500   refresh mode=CN
+22:48:54.577     comp ON letter
+22:48:55.704     comp OFF vk0D
+22:48:55.985     comp ON letter
+22:48:56.729 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=True en=True fg=0804
+22:48:56.743     comp OFF fg
+22:48:57.123   refresh mode=null
+22:48:57.769 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:48:58.103   refresh mode=CN
+22:48:58.528     comp ON letter
+22:49:00.089     comp OFF vk0D
+22:49:00.865     comp ON letter
+22:49:01.337 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:49:01.337   -> swallow TAB
+22:49:01.346     uia skip terminal cls=TermControl
+22:49:01.346   verifyTab state=Unknown
+22:49:01.453   refresh mode=CN
+22:49:02.177 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:49:02.178   -> swallow TAB
+22:49:02.180     uia skip terminal cls=TermControl
+22:49:02.180   verifyTab state=Unknown
+22:49:02.291   refresh mode=CN
+22:49:02.369 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:49:02.369   -> swallow TAB
+22:49:02.372     uia skip terminal cls=TermControl
+22:49:02.373   verifyTab state=Unknown
+22:49:02.480   refresh mode=CN
+22:49:02.545 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:49:02.545   -> swallow TAB
+22:49:02.547     uia skip terminal cls=TermControl
+22:49:02.547   verifyTab state=Unknown
+22:49:02.652   refresh mode=CN
+22:49:02.721 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:49:02.721   -> swallow TAB
+22:49:02.722     uia skip terminal cls=TermControl
+22:49:02.724   verifyTab state=Unknown
+22:49:02.823   refresh mode=CN
+22:49:03.945 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=True en=True fg=0804
+22:49:03.960     comp OFF fg
+22:49:04.417 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:49:04.464   refresh mode=null
+22:49:04.857   refresh mode=CN
+22:49:05.577 key vk=0xBA cn=True mode=1 comp=False sh=False ct=False al=False en=True fg=0804
+22:49:05.687   refresh mode=CN
+22:49:06.568     comp ON letter
+22:49:06.937     comp OFF vk20
+22:49:07.113     comp ON letter
+22:49:09.008     comp OFF vk20
+22:49:09.945     comp ON letter
+22:49:11.753     comp OFF vk20
+22:49:11.929     comp ON letter
+22:49:12.792     comp OFF vk20
+22:49:12.881     comp ON letter
+22:49:13.464     comp OFF vk20
+22:49:13.785     comp ON letter
+22:49:14.913     comp OFF vk20
+22:49:15.169 key vk=0xBA cn=True mode=1 comp=False sh=True ct=False al=False en=True fg=0804
+22:49:15.276   refresh mode=CN
+22:49:15.425 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:49:15.866   refresh mode=null
+22:49:16.161 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:49:16.520   refresh mode=CN
+22:49:16.889     comp ON letter
+22:49:18.825     comp OFF vk0D
+22:49:19.233 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:49:19.593   refresh mode=null
+22:49:20.089 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:49:20.221   refresh mode=null
+22:49:21.073     comp ON letter
+22:49:21.960     comp OFF vk0D
+22:49:22.353     comp ON letter
+22:49:24.161     comp OFF vk0D
+22:49:24.617     comp ON letter
+22:49:25.033     comp OFF vk0D
+22:49:27.440     comp ON letter
+22:49:27.856     comp OFF vk20
+22:49:28.048     comp ON letter
+22:49:29.553     comp OFF vk33
+22:49:29.681     comp ON letter
+22:49:30.936     comp OFF vk20
+22:49:31.009     comp ON letter
+22:49:31.304     comp OFF vk20
+22:49:32.097     comp ON letter
+22:49:32.649     comp OFF vk0D
+22:49:32.753     comp ON letter
+22:49:33.225     comp OFF vk20
+22:49:34.568     comp ON letter
+22:49:35.585     comp OFF vk20
+22:49:35.689     comp ON letter
+22:49:37.833     comp OFF vk20
+22:49:37.896     comp ON letter
+22:49:39.353     comp OFF vk32
+22:49:39.553     comp ON letter
+22:49:39.650     comp OFF vk20
+22:49:39.849     comp ON letter
+22:49:40.178     comp OFF vk20
+22:49:41.737     comp ON letter
+22:49:42.112     comp OFF vk20
+22:49:42.281     comp ON letter
+22:49:42.657     comp OFF vk20
+22:49:45.681 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:49:46.084   refresh mode=null
+22:49:46.137 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:49:46.513 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:49:46.519   refresh mode=CN
+22:49:46.621   refresh mode=CN
+22:49:47.480 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:49:48.021   refresh mode=CN
+22:49:48.304     comp ON letter
+22:49:53.297     comp OFF vk0D
+22:49:53.601     comp ON letter
+22:49:54.528     comp OFF vk32
+22:49:54.801     comp ON letter
+22:49:55.233     comp OFF vk20
+22:49:55.353     comp ON letter
+22:49:55.456     comp OFF vk20
+22:49:58.561     comp ON letter
+22:50:00.144     comp OFF vk32
+22:50:00.393     comp ON letter
+22:50:00.513     comp OFF vk20
+22:50:00.753     comp ON letter
+22:50:01.825     comp OFF vk20
+22:50:02.801     comp ON letter
+22:50:03.953     comp OFF vk20
+22:50:04.121     comp ON letter
+22:50:06.049     comp OFF vk20
+22:50:06.201     comp ON letter
+22:50:06.713     comp OFF vk20
+22:50:06.897     comp ON letter
+22:50:07.401     comp OFF vk20
+22:50:07.657     comp ON letter
+22:50:08.873     comp OFF vk20
+22:50:09.473     comp ON letter
+22:50:09.793     comp OFF vk20
+22:50:11.185     comp ON letter
+22:50:12.425     comp OFF vk0D
+22:50:12.737     comp ON letter
+22:50:13.097     comp OFF vk20
+22:50:13.241     comp ON letter
+22:50:13.306     comp OFF vk20
+22:50:14.465 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:50:14.935   refresh mode=null
+22:50:15.225 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:50:15.686   refresh mode=CN
+22:50:16.008 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=True en=True fg=0804
+22:50:16.330 key vk=0x09 cn=False mode=1 comp=False sh=False ct=False al=True en=True fg=0409
+22:50:16.455   refresh mode=null
+22:50:16.536   refresh mode=CN
+22:50:16.857     comp ON letter
+22:50:17.785     comp OFF vk20
+22:50:17.976     comp ON letter
+22:50:18.353     comp OFF vk20
+22:50:18.537     comp ON letter
+22:50:20.296     comp OFF vk32
+22:50:21.337     comp ON letter
+22:50:25.273     comp OFF vk20
+22:50:28.032     comp ON letter
+22:50:28.393     comp OFF vk20
+22:50:28.760     comp ON letter
+22:50:29.448     comp OFF vk20
+22:50:30.169     comp ON letter
+22:50:31.137     comp OFF vk20
+22:50:31.449     comp ON letter
+22:50:32.145     comp OFF vk20
+22:50:33.009     comp ON letter
+22:50:33.954     comp OFF vk20
+22:50:37.521     comp ON letter
+22:50:39.377     comp OFF vk0D
+22:50:41.497     comp ON letter
+22:50:42.473     comp OFF vk0D
+22:50:42.713     comp ON letter
+22:50:43.081     comp OFF vk20
+22:50:43.257     comp ON letter
+22:50:44.489     comp OFF vk20
+22:50:45.136     comp ON letter
+22:50:45.945     comp OFF vk20
+22:50:46.313     comp ON letter
+22:50:46.673     comp OFF vk20
+22:50:50.681     comp ON letter
+22:50:52.361     comp OFF vk20
+22:50:52.513     comp ON letter
+22:50:53.256     comp OFF vk20
+22:50:57.825     comp ON letter
+22:50:59.065     comp OFF vk20
+22:50:59.209     comp ON letter
+22:50:59.465     comp OFF vk20
+22:50:59.881     comp ON letter
+22:51:00.785     comp OFF vk20
+22:51:01.313     comp ON letter
+22:51:03.345     comp OFF vk33
+22:51:04.673     comp ON letter
+22:51:05.001     comp OFF vk20
+22:51:05.201     comp ON letter
+22:51:05.665     comp OFF vk20
+22:51:05.905     comp ON letter
+22:51:06.225     comp OFF vk20
+22:51:06.929     comp ON letter
+22:51:07.745     comp OFF vk20
+22:51:08.609     comp ON letter
+22:51:10.689     comp OFF vk20
+22:51:13.953     comp ON letter
+22:51:14.264     comp OFF vk20
+22:51:14.345     comp ON letter
+22:51:14.641     comp OFF vk20
+22:51:14.865     comp ON letter
+22:51:15.752     comp OFF vk33
+22:51:15.993     comp ON letter
+22:51:16.321     comp OFF vk20
+22:51:16.513     comp ON letter
+22:51:17.073     comp OFF vk20
+22:51:17.201     comp ON letter
+22:51:17.993     comp OFF vk20
+22:51:29.545     comp ON letter
+22:51:29.985 key vk=0x09 cn=True mode=1 comp=True sh=False ct=False al=False en=True fg=0804
+22:51:29.986   -> swallow TAB
+22:51:29.987     uia skip terminal cls=TermControl
+22:51:29.987   verifyTab state=Unknown
+22:51:30.090   refresh mode=CN
+22:51:30.793     comp OFF vk0D
+22:51:31.273 key vk=0x09 cn=True mode=1 comp=False sh=False ct=False al=False en=True fg=0804
+22:51:31.386   refresh mode=CN
+22:51:41.097     comp ON letter
+22:51:41.553     comp OFF mouse
+22:51:45.993     comp ON letter
+22:51:46.280     comp OFF mouse
+22:51:50.297     comp ON letter

@@ -285,7 +285,16 @@ namespace ImeKeyGuard
 
         void OnForegroundChanged(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
-            composing = false;
+            try
+            {
+                uint pid;
+                GetWindowThreadProcessId(hwnd, out pid);
+                string name = "";
+                try { name = System.Diagnostics.Process.GetProcessById((int)pid).ProcessName; } catch { }
+                if (name == "TextInputHost" || name == "ChsIME" || name == "InputApp") return;
+            }
+            catch { }
+            SetComposing(false, "fg");
         }
 
         IntPtr MouseHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
@@ -293,7 +302,7 @@ namespace ImeKeyGuard
             if (nCode >= 0)
             {
                 int msg = wParam.ToInt32();
-                if (msg == WM_LBUTTONDOWN || msg == WM_RBUTTONDOWN) composing = false;
+                if (msg == WM_LBUTTONDOWN || msg == WM_RBUTTONDOWN) SetComposing(false, "mouse");
             }
             return CallNextHookEx(mouseHook, nCode, wParam, lParam);
         }
@@ -341,13 +350,13 @@ namespace ImeKeyGuard
                             if (m.HasValue) modeState = m.Value ? 1 : 0;
                             if (m == false)
                             {
-                                composing = false;
+                                SetComposing(false, "en-mode");
                                 return CallNextHookEx(hook, nCode, wParam, lParam);
                             }
                         }
                         if (modeState == 0)
                         {
-                            composing = false;
+                            SetComposing(false, "mode-en");
                             return CallNextHookEx(hook, nCode, wParam, lParam);
                         }
                         if (!shift && !ctrl && !alt)
@@ -375,29 +384,35 @@ namespace ImeKeyGuard
                     }
                     else
                     {
-                        composing = false;
+                        SetComposing(false, "non-cn");
                     }
                 }
             }
             return CallNextHookEx(hook, nCode, wParam, lParam);
         }
 
+        void SetComposing(bool value, string why)
+        {
+            if (composing != value) Log("    comp " + (value ? "ON" : "OFF") + " " + why);
+            composing = value;
+        }
+
         void TrackComposition(uint vk)
         {
             if (vk >= 0x41 && vk <= 0x5A)
             {
-                composing = true;
+                SetComposing(true, "letter");
                 return;
             }
             if (vk == 0x20 || vk == 0x0D || vk == 0x1B || (vk >= 0x31 && vk <= 0x39))
             {
-                composing = false;
+                SetComposing(false, "vk" + vk.ToString("X2"));
                 return;
             }
             if (vk == 0xBC || vk == 0xBE || vk == 0xBA || vk == 0xBF || vk == 0xBD ||
                 vk == 0xDE || vk == 0xDB || vk == 0xDD || vk == 0xDC || vk == 0xBB)
             {
-                composing = false;
+                SetComposing(false, "punct");
                 return;
             }
         }
@@ -408,12 +423,12 @@ namespace ImeKeyGuard
             Log("  verifyTab state=" + s);
             if (s == ComposeState.NotComposing)
             {
-                composing = false;
+                SetComposing(false, "verify-nocomp");
                 SendKey((ushort)VK_TAB, 0x0F, 0);
             }
             else if (s == ComposeState.Composing)
             {
-                composing = true;
+                SetComposing(true, "verify-comp");
             }
         }
 
@@ -423,14 +438,14 @@ namespace ImeKeyGuard
             Log("  semi state=" + s);
             if (s == ComposeState.NotComposing)
             {
-                composing = false;
+                SetComposing(false, "semi-nocomp");
                 SendKey((ushort)VK_OEM_1, 0x27, 0);
                 return;
             }
             SendKey(0x20, 0x39, 0);
             Thread.Sleep(45);
             SendUnicode((char)0xFF1B);
-            composing = false;
+            SetComposing(false, "semi-done");
         }
 
         ComposeState DetectComposing()
